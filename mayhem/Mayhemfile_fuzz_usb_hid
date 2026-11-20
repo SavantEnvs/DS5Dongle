@@ -1,0 +1,11 @@
+project: savantenvs/DS5Dongle
+target: fuzz_usb_hid
+
+cmds:
+  - cmd: /mayhem/mayhem/bin/fuzz_usb_hid
+    libfuzzer: true
+    timeout: 5
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_usb_hid/testsuite

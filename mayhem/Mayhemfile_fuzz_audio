@@ -1,0 +1,11 @@
+project: savantenvs/DS5Dongle
+target: fuzz_audio
+
+cmds:
+  - cmd: /mayhem/mayhem/bin/fuzz_audio
+    libfuzzer: true
+    timeout: 5
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_audio/testsuite

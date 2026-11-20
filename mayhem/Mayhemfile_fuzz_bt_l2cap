@@ -1,0 +1,11 @@
+project: savantenvs/DS5Dongle
+target: fuzz_bt_l2cap
+
+cmds:
+  - cmd: /mayhem/mayhem/bin/fuzz_bt_l2cap
+    libfuzzer: true
+    timeout: 5
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_bt_l2cap/testsuite
